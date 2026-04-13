@@ -1,6 +1,7 @@
 # sk-align
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![PyPI](https://img.shields.io/pypi/v/sk-align.svg)](https://pypi.org/project/sk-align/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97-Model_on_Hub-yellow.svg)](https://huggingface.co/eist-edinburgh/nnet3_alignment_model)
 [![Tests](https://img.shields.io/badge/tests-49%20passing-brightgreen.svg)](#testing)
