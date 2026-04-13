@@ -1,0 +1,192 @@
+[
+  {
+    "word": "<eps>",
+    "start_frame": 0,
+    "dur_frames": 67
+  },
+  {
+    "word": "sin",
+    "start_frame": 67,
+    "dur_frames": 3,
+    "start": 2.01,
+    "end": 2.1
+  },
+  {
+    "word": "sibh",
+    "start_frame": 70,
+    "dur_frames": 4,
+    "start": 2.1,
+    "end": 2.22
+  },
+  {
+    "word": "fh\u00e8in",
+    "start_frame": 74,
+    "dur_frames": 5,
+    "start": 2.22,
+    "end": 2.37
+  },
+  {
+    "word": "a",
+    "start_frame": 79,
+    "dur_frames": 1,
+    "start": 2.37,
+    "end": 2.4
+  },
+  {
+    "word": "ch\u00e0irdean",
+    "start_frame": 80,
+    "dur_frames": 1,
+    "start": 2.4,
+    "end": 2.43
+  },
+  {
+    "word": "f\u00e0ilte",
+    "start_frame": 81,
+    "dur_frames": 6,
+    "start": 2.43,
+    "end": 2.61
+  },
+  {
+    "word": "gu",
+    "start_frame": 87,
+    "dur_frames": 2,
+    "start": 2.61,
+    "end": 2.67
+  },
+  {
+    "word": "pr\u00f2gram",
+    "start_frame": 89,
+    "dur_frames": 7,
+    "start": 2.67,
+    "end": 2.88
+  },
+  {
+    "word": "eile",
+    "start_frame": 96,
+    "dur_frames": 4,
+    "start": 2.88,
+    "end": 3.0
+  },
+  {
+    "word": "san",
+    "start_frame": 100,
+    "dur_frames": 3,
+    "start": 3.0,
+    "end": 3.09
+  },
+  {
+    "word": "<eps>",
+    "start_frame": 103,
+    "dur_frames": 186
+  },
+  {
+    "word": "t-sreath",
+    "start_frame": 289,
+    "dur_frames": 1,
+    "start": 8.67,
+    "end": 8.7
+  },
+  {
+    "word": "seo",
+    "start_frame": 290,
+    "dur_frames": 3,
+    "start": 8.7,
+    "end": 8.79
+  },
+  {
+    "word": "de",
+    "start_frame": 293,
+    "dur_frames": 2,
+    "start": 8.79,
+    "end": 8.85
+  },
+  {
+    "word": "speakgaelic",
+    "start_frame": 295,
+    "dur_frames": 1,
+    "start": 8.85,
+    "end": 8.88
+  },
+  {
+    "word": "\u2019s",
+    "start_frame": 296,
+    "dur_frames": 1,
+    "start": 8.88,
+    "end": 8.91
+  },
+  {
+    "word": "tha",
+    "start_frame": 297,
+    "dur_frames": 3,
+    "start": 8.91,
+    "end": 9.0
+  },
+  {
+    "word": "mi",
+    "start_frame": 300,
+    "dur_frames": 2,
+    "start": 9.0,
+    "end": 9.06
+  },
+  {
+    "word": "an",
+    "start_frame": 302,
+    "dur_frames": 2,
+    "start": 9.06,
+    "end": 9.12
+  },
+  {
+    "word": "d\u00f2chas",
+    "start_frame": 304,
+    "dur_frames": 6,
+    "start": 9.12,
+    "end": 9.3
+  },
+  {
+    "word": "gu",
+    "start_frame": 310,
+    "dur_frames": 2,
+    "start": 9.3,
+    "end": 9.36
+  },
+  {
+    "word": "bheil",
+    "start_frame": 312,
+    "dur_frames": 5,
+    "start": 9.36,
+    "end": 9.51
+  },
+  {
+    "word": "sibh",
+    "start_frame": 317,
+    "dur_frames": 4,
+    "start": 9.51,
+    "end": 9.63
+  },
+  {
+    "word": "gu",
+    "start_frame": 321,
+    "dur_frames": 2,
+    "start": 9.63,
+    "end": 9.69
+  },
+  {
+    "word": "frogail",
+    "start_frame": 323,
+    "dur_frames": 1,
+    "start": 9.69,
+    "end": 9.72
+  },
+  {
+    "word": "agus",
+    "start_frame": 324,
+    "dur_frames": 4,
+    "start": 9.72,
+    "end": 9.84
+  },
+  {
+    "word": "<eps>",
+    "start_frame": 328,
+    "dur_frames": 5
+  }
+]

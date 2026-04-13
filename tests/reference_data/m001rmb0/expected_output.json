@@ -1,0 +1,127 @@
+[
+  {
+    "word": "tha",
+    "start": 0.66,
+    "end": 0.78
+  },
+  {
+    "word": "e",
+    "start": 0.78,
+    "end": 0.84
+  },
+  {
+    "word": "seachd",
+    "start": 0.84,
+    "end": 1.17
+  },
+  {
+    "word": "uairean",
+    "start": 1.17,
+    "end": 1.53
+  },
+  {
+    "word": "seo",
+    "start": 1.53,
+    "end": 1.71
+  },
+  {
+    "word": "agaibh",
+    "start": 1.71,
+    "end": 1.89
+  },
+  {
+    "word": "pr\u00ecomh",
+    "start": 1.89,
+    "end": 2.16
+  },
+  {
+    "word": "naidheachdan",
+    "start": 2.16,
+    "end": 2.7
+  },
+  {
+    "word": "an",
+    "start": 2.73,
+    "end": 2.82
+  },
+  {
+    "word": "l\u00e0",
+    "start": 2.82,
+    "end": 3.12
+  },
+  {
+    "word": "israel",
+    "start": 3.99,
+    "end": 4.44
+  },
+  {
+    "word": "ag",
+    "start": 4.44,
+    "end": 4.56
+  },
+  {
+    "word": "r\u00e0dh",
+    "start": 4.56,
+    "end": 4.8
+  },
+  {
+    "word": "nach",
+    "start": 4.83,
+    "end": 5.16
+  },
+  {
+    "word": "cuir",
+    "start": 5.16,
+    "end": 5.4
+  },
+  {
+    "word": "iad",
+    "start": 5.4,
+    "end": 5.49
+  },
+  {
+    "word": "stad",
+    "start": 5.64,
+    "end": 6.09
+  },
+  {
+    "word": "air",
+    "start": 6.15,
+    "end": 6.27
+  },
+  {
+    "word": "stuth",
+    "start": 6.27,
+    "end": 6.54
+  },
+  {
+    "word": "cobhair",
+    "start": 6.57,
+    "end": 6.93
+  },
+  {
+    "word": "leithid",
+    "start": 6.93,
+    "end": 7.2
+  },
+  {
+    "word": "biadh",
+    "start": 7.2,
+    "end": 7.56
+  },
+  {
+    "word": "agus",
+    "start": 7.59,
+    "end": 7.83
+  },
+  {
+    "word": "uisge",
+    "start": 7.83,
+    "end": 8.19
+  },
+  {
+    "word": "a\u2019",
+    "start": 9.63,
+    "end": 9.78
+  }
+]

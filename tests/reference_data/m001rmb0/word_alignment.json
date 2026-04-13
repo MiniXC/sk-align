@@ -1,0 +1,227 @@
+[
+  {
+    "word": "<eps>",
+    "start_frame": 0,
+    "dur_frames": 22
+  },
+  {
+    "word": "tha",
+    "start_frame": 22,
+    "dur_frames": 4,
+    "start": 0.66,
+    "end": 0.78
+  },
+  {
+    "word": "e",
+    "start_frame": 26,
+    "dur_frames": 2,
+    "start": 0.78,
+    "end": 0.84
+  },
+  {
+    "word": "seachd",
+    "start_frame": 28,
+    "dur_frames": 11,
+    "start": 0.84,
+    "end": 1.17
+  },
+  {
+    "word": "uairean",
+    "start_frame": 39,
+    "dur_frames": 12,
+    "start": 1.17,
+    "end": 1.53
+  },
+  {
+    "word": "seo",
+    "start_frame": 51,
+    "dur_frames": 6,
+    "start": 1.53,
+    "end": 1.71
+  },
+  {
+    "word": "agaibh",
+    "start_frame": 57,
+    "dur_frames": 6,
+    "start": 1.71,
+    "end": 1.89
+  },
+  {
+    "word": "pr\u00ecomh",
+    "start_frame": 63,
+    "dur_frames": 9,
+    "start": 1.89,
+    "end": 2.16
+  },
+  {
+    "word": "naidheachdan",
+    "start_frame": 72,
+    "dur_frames": 18,
+    "start": 2.16,
+    "end": 2.7
+  },
+  {
+    "word": "<eps>",
+    "start_frame": 90,
+    "dur_frames": 1
+  },
+  {
+    "word": "an",
+    "start_frame": 91,
+    "dur_frames": 3,
+    "start": 2.73,
+    "end": 2.82
+  },
+  {
+    "word": "l\u00e0",
+    "start_frame": 94,
+    "dur_frames": 10,
+    "start": 2.82,
+    "end": 3.12
+  },
+  {
+    "word": "<eps>",
+    "start_frame": 104,
+    "dur_frames": 29
+  },
+  {
+    "word": "israel",
+    "start_frame": 133,
+    "dur_frames": 15,
+    "start": 3.99,
+    "end": 4.44
+  },
+  {
+    "word": "ag",
+    "start_frame": 148,
+    "dur_frames": 4,
+    "start": 4.44,
+    "end": 4.56
+  },
+  {
+    "word": "r\u00e0dh",
+    "start_frame": 152,
+    "dur_frames": 8,
+    "start": 4.56,
+    "end": 4.8
+  },
+  {
+    "word": "<eps>",
+    "start_frame": 160,
+    "dur_frames": 1
+  },
+  {
+    "word": "nach",
+    "start_frame": 161,
+    "dur_frames": 11,
+    "start": 4.83,
+    "end": 5.16
+  },
+  {
+    "word": "cuir",
+    "start_frame": 172,
+    "dur_frames": 8,
+    "start": 5.16,
+    "end": 5.4
+  },
+  {
+    "word": "iad",
+    "start_frame": 180,
+    "dur_frames": 3,
+    "start": 5.4,
+    "end": 5.49
+  },
+  {
+    "word": "<eps>",
+    "start_frame": 183,
+    "dur_frames": 5
+  },
+  {
+    "word": "stad",
+    "start_frame": 188,
+    "dur_frames": 15,
+    "start": 5.64,
+    "end": 6.09
+  },
+  {
+    "word": "<eps>",
+    "start_frame": 203,
+    "dur_frames": 2
+  },
+  {
+    "word": "air",
+    "start_frame": 205,
+    "dur_frames": 4,
+    "start": 6.15,
+    "end": 6.27
+  },
+  {
+    "word": "stuth",
+    "start_frame": 209,
+    "dur_frames": 9,
+    "start": 6.27,
+    "end": 6.54
+  },
+  {
+    "word": "<eps>",
+    "start_frame": 218,
+    "dur_frames": 1
+  },
+  {
+    "word": "cobhair",
+    "start_frame": 219,
+    "dur_frames": 12,
+    "start": 6.57,
+    "end": 6.93
+  },
+  {
+    "word": "leithid",
+    "start_frame": 231,
+    "dur_frames": 9,
+    "start": 6.93,
+    "end": 7.2
+  },
+  {
+    "word": "biadh",
+    "start_frame": 240,
+    "dur_frames": 12,
+    "start": 7.2,
+    "end": 7.56
+  },
+  {
+    "word": "<eps>",
+    "start_frame": 252,
+    "dur_frames": 1
+  },
+  {
+    "word": "agus",
+    "start_frame": 253,
+    "dur_frames": 8,
+    "start": 7.59,
+    "end": 7.83
+  },
+  {
+    "word": "uisge",
+    "start_frame": 261,
+    "dur_frames": 12,
+    "start": 7.83,
+    "end": 8.19
+  },
+  {
+    "word": "<eps>",
+    "start_frame": 273,
+    "dur_frames": 48
+  },
+  {
+    "word": "a\u2019",
+    "start_frame": 321,
+    "dur_frames": 5,
+    "start": 9.63,
+    "end": 9.78
+  },
+  {
+    "word": "<eps>",
+    "start_frame": 326,
+    "dur_frames": 7
+  }
+]

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sk-align"
+version = "0.1.0"
+description = "Standalone forced alignment for Scottish Gaelic — no Kaldi/PyKaldi dependency"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+torch = ["torch>=2.0"]
+hub = ["huggingface_hub>=0.20"]
+all = [
+    "torch>=2.0",
+    "huggingface_hub>=0.20",
+]
+test = [
+    "pytest>=7.0",
+    "huggingface_hub>=0.20",
+]
+dev = [
+    "sk-align[test]",
+    "ruff",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

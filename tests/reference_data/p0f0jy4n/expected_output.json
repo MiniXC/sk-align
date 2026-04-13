@@ -1,0 +1,127 @@
+[
+  {
+    "word": "sin",
+    "start": 2.01,
+    "end": 2.1
+  },
+  {
+    "word": "sibh",
+    "start": 2.1,
+    "end": 2.22
+  },
+  {
+    "word": "fh\u00e8in",
+    "start": 2.22,
+    "end": 2.37
+  },
+  {
+    "word": "a",
+    "start": 2.37,
+    "end": 2.4
+  },
+  {
+    "word": "ch\u00e0irdean",
+    "start": 2.4,
+    "end": 2.43
+  },
+  {
+    "word": "f\u00e0ilte",
+    "start": 2.43,
+    "end": 2.61
+  },
+  {
+    "word": "gu",
+    "start": 2.61,
+    "end": 2.67
+  },
+  {
+    "word": "pr\u00f2gram",
+    "start": 2.67,
+    "end": 2.88
+  },
+  {
+    "word": "eile",
+    "start": 2.88,
+    "end": 3.0
+  },
+  {
+    "word": "san",
+    "start": 3.0,
+    "end": 3.09
+  },
+  {
+    "word": "t-sreath",
+    "start": 8.67,
+    "end": 8.7
+  },
+  {
+    "word": "seo",
+    "start": 8.7,
+    "end": 8.79
+  },
+  {
+    "word": "de",
+    "start": 8.79,
+    "end": 8.85
+  },
+  {
+    "word": "speakgaelic",
+    "start": 8.85,
+    "end": 8.88
+  },
+  {
+    "word": "\u2019s",
+    "start": 8.88,
+    "end": 8.91
+  },
+  {
+    "word": "tha",
+    "start": 8.91,
+    "end": 9.0
+  },
+  {
+    "word": "mi",
+    "start": 9.0,
+    "end": 9.06
+  },
+  {
+    "word": "an",
+    "start": 9.06,
+    "end": 9.12
+  },
+  {
+    "word": "d\u00f2chas",
+    "start": 9.12,
+    "end": 9.3
+  },
+  {
+    "word": "gu",
+    "start": 9.3,
+    "end": 9.36
+  },
+  {
+    "word": "bheil",
+    "start": 9.36,
+    "end": 9.51
+  },
+  {
+    "word": "sibh",
+    "start": 9.51,
+    "end": 9.63
+  },
+  {
+    "word": "gu",
+    "start": 9.63,
+    "end": 9.69
+  },
+  {
+    "word": "frogail",
+    "start": 9.69,
+    "end": 9.72
+  },
+  {
+    "word": "agus",
+    "start": 9.72,
+    "end": 9.84
+  }
+]
