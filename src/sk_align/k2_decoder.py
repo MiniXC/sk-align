@@ -1,11 +1,8 @@
 """
 k2-based Viterbi decoder for forced alignment.
 
-Replaces the pure-Python ``viterbi.py`` decoder with k2's optimised
-C++ implementation via ``intersect_dense`` + ``shortest_path``.
-
-The graph compilation (``graph.py``) remains unchanged — we convert
-the ``HmmGraph`` into an epsilon-free k2 FSA at decode time.
+Converts the ``HmmGraph`` (from ``graph.py``) into a k2 FSA and uses
+``intersect_dense`` + ``shortest_path`` for efficient Viterbi decoding.
 
 Requires: ``pip install k2`` (matched to your PyTorch version).
 """
@@ -15,26 +12,17 @@ from __future__ import annotations
 from collections import deque
 from typing import TYPE_CHECKING
 
+import k2
 import numpy as np
 import torch
 
 if TYPE_CHECKING:
     from sk_align.graph import HmmGraph
 
-try:
-    import k2
-except ImportError:
-    k2 = None  # type: ignore[assignment]
-
 
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
-
-def k2_available() -> bool:
-    """Return True if k2 is importable."""
-    return k2 is not None
-
 
 def viterbi_decode_k2(
     graph: "HmmGraph",

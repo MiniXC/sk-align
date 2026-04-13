@@ -21,10 +21,7 @@ import numpy as np
 import pytest
 
 from sk_align.graph import HmmGraph, HmmGraphArc
-from sk_align.k2_decoder import k2_available, viterbi_decode_k2
-from sk_align.viterbi import MatrixAcousticScorer, viterbi_decode
-
-pytestmark = pytest.mark.skipif(not k2_available(), reason="k2 not installed")
+from sk_align.k2_decoder import viterbi_decode_k2
 
 REFERENCE_DIR = Path(__file__).parent / "reference_data"
 PYKALDI_ALIGNER = (
@@ -138,27 +135,6 @@ class TestK2DecoderCorrectness:
         assert len(wids) > 0, "Should recover at least one word-id"
         assert 1 in wids or 2 in wids
 
-    def test_matches_python_viterbi(self):
-        """k2 and pure-Python decoders should produce similar costs."""
-        graph, tid_to_pdf = _make_simple_graph()
-        num_frames = 6
-        loglikes = np.zeros((num_frames, 3), dtype=np.float32)
-        loglikes[:2, 0] = 1.0
-        loglikes[2:4, 1] = 1.0
-        loglikes[4:6, 2] = 1.0
-
-        # k2 result
-        alignment_k2, _, cost_k2, ok_k2 = viterbi_decode_k2(
-            graph, loglikes, tid_to_pdf, acoustic_scale=1.0
-        )
-
-        # Python result
-        scorer = MatrixAcousticScorer(loglikes, tid_to_pdf, acoustic_scale=1.0)
-        result_py = viterbi_decode(graph, scorer, beam=100.0)
-
-        assert ok_k2 and result_py.succeeded
-        assert len(alignment_k2) == len(result_py.alignment)
-
     def test_epsilon_arcs_handled(self):
         """Graphs with epsilon arcs should work correctly."""
         graph = HmmGraph()
@@ -213,27 +189,18 @@ class TestK2DecoderSpeed:
 
     @staticmethod
     def _bench(graph, loglikes, tid_to_pdf, acoustic_scale=1.0, n_warmup=1, n_iter=3):
-        """Run both decoders, return (k2_time, python_time, k2_ok, py_ok)."""
-        # Warm up k2
+        """Run k2 decoder, return (k2_time, k2_ok)."""
         for _ in range(n_warmup):
             viterbi_decode_k2(graph, loglikes, tid_to_pdf, acoustic_scale=acoustic_scale)
 
-        # Benchmark k2
         t0 = time.perf_counter()
         for _ in range(n_iter):
-            a_k2, _, c_k2, ok_k2 = viterbi_decode_k2(
+            _, _, _, ok_k2 = viterbi_decode_k2(
                 graph, loglikes, tid_to_pdf, acoustic_scale=acoustic_scale
             )
         k2_time = (time.perf_counter() - t0) / n_iter
 
-        # Benchmark pure Python
-        scorer = MatrixAcousticScorer(loglikes, tid_to_pdf, acoustic_scale=acoustic_scale)
-        t0 = time.perf_counter()
-        for _ in range(n_iter):
-            result_py = viterbi_decode(graph, scorer, beam=200.0)
-        py_time = (time.perf_counter() - t0) / n_iter
-
-        return k2_time, py_time, ok_k2, result_py.succeeded
+        return k2_time, ok_k2
 
     def test_speed_small_graph(self):
         """Speed on a small graph (3 states, 6 frames)."""
@@ -243,12 +210,10 @@ class TestK2DecoderSpeed:
         loglikes[2:4, 1] = 1.0
         loglikes[4:6, 2] = 1.0
 
-        k2_t, py_t, ok_k2, ok_py = self._bench(graph, loglikes, tid_to_pdf)
+        k2_t, ok_k2 = self._bench(graph, loglikes, tid_to_pdf)
         print(f"\n  Small graph (3 states, 6 frames):")
         print(f"    k2:     {k2_t*1000:8.2f} ms")
-        print(f"    python: {py_t*1000:8.2f} ms")
-        print(f"    ratio:  {py_t/k2_t:.1f}x")
-        assert ok_k2 and ok_py
+        assert ok_k2
 
     def test_speed_medium_graph(self):
         """Speed on a medium graph (~150 states, 300 frames)."""
@@ -260,12 +225,10 @@ class TestK2DecoderSpeed:
             pdf_idx = min(int(i * n_pdfs / num_frames), n_pdfs - 1)
             loglikes[i, pdf_idx] += 5.0
 
-        k2_t, py_t, ok_k2, ok_py = self._bench(graph, loglikes, tid_to_pdf)
+        k2_t, ok_k2 = self._bench(graph, loglikes, tid_to_pdf)
         print(f"\n  Medium graph ({graph.num_states} states, {num_frames} frames):")
         print(f"    k2:     {k2_t*1000:8.2f} ms")
-        print(f"    python: {py_t*1000:8.2f} ms")
-        print(f"    ratio:  {py_t/k2_t:.1f}x")
-        assert ok_k2 and ok_py
+        assert ok_k2
 
     def test_speed_large_graph(self):
         """Speed on a large graph (~750 states, 1500 frames).

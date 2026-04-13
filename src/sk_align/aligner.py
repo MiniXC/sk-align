@@ -16,7 +16,7 @@ import numpy as np
 
 from sk_align.fst import StdVectorFst
 from sk_align.graph import compile_training_graph
-from sk_align.k2_decoder import k2_available, viterbi_decode_k2
+from sk_align.k2_decoder import viterbi_decode_k2
 from sk_align.kaldi_io import (
     read_disambig_symbols,
     read_symbol_table,
@@ -26,7 +26,6 @@ from sk_align.kaldi_io import (
 from sk_align.mfcc import MfccOptions, compute_mfcc
 from sk_align.transition_model import TransitionModel
 from sk_align.tree import ContextDependency
-from sk_align.viterbi import AlignmentResult, MatrixAcousticScorer, viterbi_decode
 from sk_align.word_align import (
     extract_word_alignment,
     word_alignment_to_timestamps,
@@ -329,43 +328,27 @@ class Aligner:
             self.disambig_syms,
         )
 
-        # 4. Create acoustic scorer
-        scorer = MatrixAcousticScorer(
+        # 4. Viterbi decode (k2)
+        alignment, word_id_list, cost, ok = viterbi_decode_k2(
+            graph,
             loglikes,
             self.trans_model.id2pdf,
-            self.acoustic_scale,
+            acoustic_scale=self.acoustic_scale,
         )
 
-        # 5. Viterbi decode (k2 when available, pure-Python fallback)
-        if k2_available():
-            alignment, word_id_list, cost, ok = viterbi_decode_k2(
-                graph,
-                loglikes,
-                self.trans_model.id2pdf,
-                acoustic_scale=self.acoustic_scale,
-            )
-            result = AlignmentResult(
-                alignment=alignment,
-                best_cost=cost,
-                word_ids=word_id_list,
-                succeeded=ok,
-            )
-        else:
-            result = viterbi_decode(graph, scorer, beam=200.0)
-
-        if not result.succeeded:
+        if not ok:
             # Fallback: return evenly-spaced words
             return self._fallback_alignment(words, loglikes.shape[0], offset)
 
-        # 6. Extract word boundaries
+        # 5. Extract word boundaries
         word_segments = extract_word_alignment(
-            result.alignment,
+            alignment,
             self.trans_model,
             self.word_boundary,
-            result.word_ids,
+            word_id_list,
         )
 
-        # 7. Convert to timestamps
+        # 6. Convert to timestamps
         timestamps = word_alignment_to_timestamps(
             word_segments,
             self.id_to_word,

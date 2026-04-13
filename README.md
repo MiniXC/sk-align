@@ -3,7 +3,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97-Model_on_Hub-yellow.svg)](https://huggingface.co/eist-edinburgh/nnet3_alignment_model)
-[![Tests](https://img.shields.io/badge/tests-55%20passing-brightgreen.svg)](#testing)
+[![Tests](https://img.shields.io/badge/tests-49%20passing-brightgreen.svg)](#testing)
 
 **Standalone forced alignment for Scottish Gaelic** — no Kaldi or PyKaldi dependency.
 
@@ -20,15 +20,15 @@ and deploy.
 - **`from_pretrained()`** — one-line model download from Hugging Face Hub
 - **MFCC extraction** — vectorised NumPy implementation matching Kaldi output
 - **TDNN-F nnet3 inference** — full PyTorch reimplementation of the forward pass
-- **k2 Viterbi decoder** — fast FSA-based decoding with pure-Python fallback
+- **k2 Viterbi decoder** — fast FSA-based decoding via `intersect_dense` + `shortest_path`
 - **Word-level timestamps** — `[{"word": "hello", "start": 0.12, "end": 0.45}, ...]`
 - **Parity-tested** — 55 tests verify numerical match against PyKaldi reference
 
 ## Installation
 
 ```bash
-pip install sk-align              # core only (numpy + scipy)
-pip install sk-align[all]         # + torch + huggingface_hub (recommended)
+pip install sk-align              # core (numpy + scipy + torch + k2)
+pip install sk-align[all]         # + huggingface_hub for from_pretrained()
 ```
 
 Or install from source:
@@ -43,9 +43,8 @@ pip install -e ".[all]"           # editable with all extras
 
 | Extra     | Installs                         | Needed for                            |
 | --------- | -------------------------------- | ------------------------------------- |
-| `torch`   | `torch>=2.0`                     | Neural network inference              |
 | `hub`     | `huggingface_hub>=0.20`          | `Aligner.from_pretrained()`           |
-| `all`     | `torch` + `huggingface_hub`      | Full end-to-end pipeline              |
+| `all`     | `huggingface_hub`                | Full end-to-end pipeline              |
 | `test`    | `pytest` + `huggingface_hub`     | Running the test suite                |
 | `dev`     | `test` extras + `ruff`           | Development                           |
 
@@ -134,7 +133,6 @@ Audio (float32, 16 kHz)
 | `sk_align.tree`         | Kaldi `ContextDependency` tree reader                              |
 | `sk_align.transition_model` | Kaldi `TransitionModel` reader                                 |
 | `sk_align.k2_decoder`   | k2-based Viterbi decoder                                          |
-| `sk_align.viterbi`      | Pure-Python Viterbi fallback                                       |
 | `sk_align.word_align`   | Word boundary extraction + timestamp conversion                    |
 | `sk_align.kaldi_io`     | Low-level Kaldi binary I/O helpers                                 |
 
@@ -162,7 +160,7 @@ The test suite verifies numerical parity with PyKaldi at every stage.
 
 ```bash
 pip install -e ".[test]"
-pytest                   # 55 tests — MFCC, I/O, graph, decoder, end-to-end parity
+pytest                   # 49 tests — MFCC, I/O, graph, decoder, end-to-end parity
 ```
 
 Tests include:

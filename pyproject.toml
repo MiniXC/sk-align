@@ -9,16 +9,35 @@ description = "Standalone forced alignment for Scottish Gaelic — no Kaldi/PyKa
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
+authors = [
+    {name = "Christoph Minixhofer", email = "christoph.minixhofer@gmail.com"},
+]
+keywords = ["forced-alignment", "speech", "scottish-gaelic", "kaldi", "asr"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
 dependencies = [
     "numpy>=1.24",
     "scipy>=1.10",
+    "torch>=2.0",
+    "k2>=1.24",
 ]
 
+[project.urls]
+Model = "https://huggingface.co/eist-edinburgh/nnet3_alignment_model"
+
 [project.optional-dependencies]
-torch = ["torch>=2.0"]
 hub = ["huggingface_hub>=0.20"]
 all = [
-    "torch>=2.0",
     "huggingface_hub>=0.20",
 ]
 test = [
